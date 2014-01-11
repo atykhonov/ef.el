@@ -28,6 +28,40 @@
 ;; This tool provides a handy way for maintaining growing GNU Emacs
 ;; configuration.
 ;;
+;; Well, here is a short story.
+;;
+;; "    People who pontificate about Unix's technical superiority often
+;; don't mention what may ultimately be its most important strength,
+;; the one that underlies all its successes. Unix is fun to hack.
+;;
+;;      Unix boosters seem almost ashamed to acknowledge this
+;; sometimes, as though admitting they're having fun might damage
+;; their legitimacy somehow. But it's true; Unix is fun to play with
+;; and develop for, and always has been." (Eric S. Raymond, "The Art
+;; of Unix programming.")
+;;
+;; The same is very true for GNU Emacs as well. It is really fun to
+;; play with GNU Emacs and develop for.
+;;
+;; When I have spare time I like to investigate GNU Emacs. I could
+;; read documentation, make some configuration customizations, reading
+;; configuration files of others etc. The last ones are the source of
+;; great findings.
+;;
+;; When I find some interesting code snippet I very often wish to try
+;; it and thus add it to my .emacs configuration file. And I add these
+;; snippets expecially if they are short and it is not hard to test
+;; and see how they work. But sometimes I meet a huge configuration
+;; files which I would like to also investigate and see how some
+;; pieces will work for me but often I afraid to just copy/paste to my
+;; .emacs file as sometimes there could be dependency breakages,
+;; version incompatibility and other potential errors which could
+;; appear exactly after code evaluation or after emacs
+;; restarting. Such errors breaks work flow and force to comment out
+;; or to resolve issues which very often are not important in
+;; particular period of time.
+;;
+;;
 ;; Commands:
 ;;
 ;;
@@ -76,6 +110,6 @@ which will be associated with the efeature set."
   (let ((efeatures (cdr (assoc efeature-set ef-efeature-sets-alist))))
     (print efeatures)
     (dolist (efeature efeatures)
-      (ef-load-feature efeature))))
+      (ef-load-efeature efeature))))
 
 (provide 'ef)
